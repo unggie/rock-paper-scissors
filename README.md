@@ -54,6 +54,12 @@ Each round compares the human's choice and the computer's choice using a `switch
 4. Play the game by following the prompts!
 
 ---
+
+## 🔗 Live Demo
+
+[Click here to play the game](https://your-username.github.io/your-repo-name/)
+
+---
 ## 📄 License
 
 This project is open-source and free to use for learning or development purposes.
