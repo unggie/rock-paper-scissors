@@ -27,6 +27,11 @@ A simple, interactive Rock-Paper-Scissors game built with vanilla JavaScript, HT
 [Game Screenshot](Screenshot-2025-10-18-015029.png)
 
 ---
+## 🚀 Live Demo
+
+Try the game online here:  
+[https://unggie.github.io/rock-paper-scissors/](https://unggie.github.io/rock-paper-scissors/)
+---
 
 ## 🛠️ Installation
 Install the necessary technology and run it in your brower
