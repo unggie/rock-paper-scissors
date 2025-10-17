@@ -1,5 +1,16 @@
+const humanImage = document.querySelector(".human");
+const computerImage = document.querySelector(".computer");
+const humanScoreValue = document.querySelector(".humanScoreValue");
+const computerScoreValue = document.querySelector(".computerScoreValue");
+const btns = document.querySelector(".options");
+
+console.table(humanImage, computerImage, humanScoreValue, computerScoreValue, btns);
+
+
 let humanScore = 0;
 let computerScore = 0;
+
+
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * (3) + 1); 
@@ -95,11 +106,11 @@ function playGame() {
     playRound(humanChoice, computerChoice);
 }
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+// playGame();
+// playGame();
+// playGame();
+// playGame();
+// playGame();
 
 console.log(`\nYour score: ${humanScore}`);
 console.log(`Computer score: ${computerScore}\n`);
