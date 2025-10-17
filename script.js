@@ -5,10 +5,33 @@ const computerScoreValue = document.querySelector(".computerScoreValue");
 const btns = document.querySelector(".options");
 
 console.table(humanImage, computerImage, humanScoreValue, computerScoreValue, btns);
-
-
+let round = 0;
 let humanScore = 0;
 let computerScore = 0;
+let humanChoice = "";
+
+btns.addEventListener('click', (event) => {
+    switch (event.target.id) {
+        case "rock":
+            humanChoice = "rock";
+            console.log(event.target.id, humanChoice);
+            break;
+        case "paper":
+            humanChoice = "paper";
+            console.log(event.target.id, humanChoice);
+            break;
+        case "scissors":
+            humanChoice = "scissors";
+            console.log(event.target.id, humanChoice);
+            break;
+        default:
+            humanChoice = null;
+            console.log(event.target.id, humanChoice);
+            break;
+        
+    }
+})
+
 
 
 
