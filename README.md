@@ -1,67 +1,43 @@
-# Rock-Paper-Scissors
+# Rock-Paper-Scissors Game
 
-AA simple interactive **Rock, Paper, Scissors** game built using vanilla JavaScript. This game allows a human player to compete against the computer in 5 rounds using a text-based interface via `prompt()` and `console.log()`.
-
----
-
-## 🎮 How It Works
-
-- The game plays **5 rounds** of Rock, Paper, Scissors.
-- The human player selects a move using a numeric prompt:
-  - `1` = Rock
-  - `2` = Paper
-  - `3` = Scissors
-- The computer randomly selects a move.
-- The result of each round is displayed in the console.
-- Scores are tracked for both the player and computer.
-- After 5 rounds, a final result is displayed:
-  - Win
-  - Loss
-  - Draw
+A simple, interactive Rock-Paper-Scissors game built with vanilla JavaScript, HTML, and CSS. Play against the computer in a best-of-five rounds match, complete with animated hand shakes and score tracking.
 
 ---
 
-## 🧠 Game Logic
+## 🎮 How to Play
 
-- Rock beats Scissors  
-- Paper beats Rock  
-- Scissors beats Paper  
-- Same choice = Draw  
-
-Each round compares the human's choice and the computer's choice using a `switch` and `if/else` based logic.
-
----
-
-## 🧾 Files
-
-- `index.html`  
-  The basic HTML structure to run the game (if needed for browser execution).
-
-- `script.js`  
-  Contains all the JavaScript code to run the game:
-  - `getHumanChoice()` — prompts the user for input
-  - `getComputerChoice()` — randomly selects a computer move
-  - `playRound()` — handles the round outcome and scoring
-  - `playGame()` — manages round flow and displays results
+1. Click on one of the three options: **Rock**, **Paper**, or **Scissors**.
+2. The computer will randomly choose its move.
+3. The game animates a "shake" before revealing the choices.
+4. Scores are updated after each round.
+5. After five rounds, the game displays the final winner.
 
 ---
 
-## 🛠 How to Run
+## ⚙️ Features
 
-1. Open the project folder.
-2. Open `index.html` in a web browser (or run from a local server).
-3. Open the browser **console** (`F12` or right-click > Inspect > Console).
-4. Play the game by following the prompts!
+- Animated hand shake effect before revealing choices.
+- Score tracking for human player and computer.
+- Best of five rounds with final winner announcement.
+- Responsive UI with clear visual feedback.
+- Easy to customize and extend.
 
 ---
-## 🔗 Live Demo
+## Screenshot
+[Game Screenshot](Screenshot-2025-10-18-015029.png)
 
-[Click here to play the game](https://unggie.github.io/rock-paper-scissors/)
-
-## 📄 License
-
-This project is open-source and free to use for learning or development purposes.
 ---
-## 🙌 Credits
 
-Developed as a beginner JavaScript project to practice functions, conditionals, and user interaction in the browser.
+## 🛠️ Installation
+Install the necessary technology and run it in your brower
+
+## 🧑‍💻 Technologies Used
+-HTML and CSS
+-Vanilla JavaScript
+
+## 🪪 License
+It's a free and open source project
+
+## ℹ️ Contact
+Created by Ungweru.E.Phiri
+Email: phiriungweru@gmail.com

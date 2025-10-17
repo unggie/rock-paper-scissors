@@ -136,17 +136,3 @@ function playRound(humanChoice, computerChoice) {
 
     }
 }
-
-// function playGame() {
-//     console.log(`\nYour score: ${humanScore}`);
-//     console.log(`Computer score: ${computerScore}\n\n`);
-
-//     const humanChoice = getHumanChoice();
-//     const computerChoice = getComputerChoice();
-//     playRound(humanChoice, computerChoice);
-// }
-
-
-// console.log(`\nYour score: ${humanScore}`);
-// console.log(`Computer score: ${computerScore}\n`);
-
