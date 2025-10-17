@@ -28,6 +28,8 @@ p{
     width: 80%;
 }
 .display{
+    width: 600px;
+    height: 400px;
     margin: 25px;
     display: flex;
     justify-content: center;

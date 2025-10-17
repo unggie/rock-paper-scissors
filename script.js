@@ -1,107 +1,121 @@
+const title = document.querySelector(".title")
 const humanImage = document.querySelector(".human");
 const computerImage = document.querySelector(".computer");
 const humanScoreValue = document.querySelector(".humanScoreValue");
 const computerScoreValue = document.querySelector(".computerScoreValue");
 const btns = document.querySelector(".options");
 
-console.table(humanImage, computerImage, humanScoreValue, computerScoreValue, btns);
 let round = 0;
 let humanScore = 0;
 let computerScore = 0;
 let humanChoice = "";
 
 btns.addEventListener('click', (event) => {
+    if (round >= 5) return;
+    round ++;
+    computerImage.classList.add("computerShake");
+    humanImage.classList.add("humanShake");
+    
+    setTimeout(() => {
+        computerImage.classList.remove("computerShake");
+        humanImage.classList.remove("humanShake");
+    }, 500)
+
     switch (event.target.id) {
         case "rock":
+            setTimeout(() => {humanImage.setAttribute("src", "./gameImages/stoneComputer.png")}, 500);
             humanChoice = "rock";
-            console.log(event.target.id, humanChoice);
             break;
         case "paper":
+            setTimeout(() => {humanImage.setAttribute("src", "./gameImages/paperComputer.png")}, 500);
             humanChoice = "paper";
-            console.log(event.target.id, humanChoice);
             break;
         case "scissors":
+            setTimeout(() => {humanImage.setAttribute("src", "./gameImages/scissorsComputer.png")}, 500);
             humanChoice = "scissors";
-            console.log(event.target.id, humanChoice);
             break;
         default:
             humanChoice = null;
-            console.log(event.target.id, humanChoice);
             break;
-        
     }
+
+    const computerChoice = getComputerChoice();
+    console.log(humanChoice, computerChoice);
+    playRound(humanChoice, computerChoice);
+
+    setTimeout(() => {  
+    humanScoreValue.textContent = humanScore;
+    computerScoreValue.textContent = computerScore;
+    }, 500); 
+
+    setTimeout(()=>{
+        humanImage.setAttribute("src", "./gameImages/stoneComputer.png");
+        computerImage.setAttribute("src", "./gameImages/stonePlayer.png");
+        title.textContent = "Rock-Paper-Scissors";
+    }, 2000);
 })
 
-
-
+function scores(humanScore, computerScore) {
+    if (humanScore > computerScore) {
+        console.log("You have won!");
+        title.textContent = "You have won!";
+    } else if (humanScore === computerScore) {
+        console.log("You have drawn!");
+        title.textContent = "You have drawn!";
+    } else {
+        console.log("You have lost!");
+        title.textContent = "You have lost!";
+    }
+}
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * (3) + 1); 
     switch (choice) {
         case 1:
             console.log("Comp => Rock");
+            setTimeout(() => {computerImage.setAttribute("src", "./gameImages/stonePlayer.png");}, 500);
             return "Rock";
-            // break;
         case 2:
             console.log("Comp => Paper");
+            setTimeout(() => {computerImage.setAttribute("src", "./gameImages/paperPlayer.png");}, 500);
             return "Paper";
-            // break;
         case 3: 
             console.log("Comp => Scissors");
+            setTimeout(() => {computerImage.setAttribute("src", "./gameImages/scissorsPlayer.png");}, 500);
             return "Scissors";
-            // break;
         default:
             console.log("Comp => System Error");
             return "System Error";
-            // break;
-    }
+    };
 
-}
-
-function getHumanChoice() {
-    let choice = window.prompt(`1. Rock\n2. Paper\n3. Scissors`);
-    switch (choice) {
-        case "1":
-            console.log("You => Rock");
-            return "Rock";
-            // break;
-        case "2":
-            console.log("You => Paper");
-            return "Paper";
-            // break;
-        case "3": 
-            console.log("You => Scissors");
-            return "Scissors";
-            // break;
-        default:
-            console.log("You => System Error");
-            return "System Error";
-            // break;
-    }
 }
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice.toUpperCase() == "ROCK") {
-
         if (computerChoice.toUpperCase() == "ROCK") {
             console.log("Draw!");
+            setTimeout(() => {title.textContent = "Draw!";}, 500);
         } else if (computerChoice.toUpperCase() == "PAPER") {
             console.log("Paper beats Rock!");
+            setTimeout(() => {title.textContent = "Paper beats Rock!"}, 500);
             computerScore ++;
         } else if (computerChoice.toUpperCase() == "SCISSORS") {
             console.log("Rock beats Scissors!");
+            setTimeout(() => {title.textContent = "Rock beats Scissors!";}, 500);
             humanScore ++;
         }
 
     } else if (humanChoice.toUpperCase() == "PAPER") {
-
         if (computerChoice.toUpperCase() == "ROCK") {
             console.log("Paper beats Rock!");
+            setTimeout(() => {title.textContent = "Paper beats Rock!";}, 500);
             humanScore ++;
         } else if (computerChoice.toUpperCase() == "PAPER") {
             console.log("Draw!");
+            setTimeout(() => {title.textContent = "Draw!";}, 500);
         } else if (computerChoice.toUpperCase() == "SCISSORS") {
             console.log("Scissors beats Paper!");
+            setTimeout(() => {title.textContent = "Scissors beats Paper!";}, 500);
             computerScore ++;
         }
 
@@ -109,39 +123,30 @@ function playRound(humanChoice, computerChoice) {
 
         if (computerChoice.toUpperCase() == "ROCK") {
             console.log("Rock beats Scissors!");
+            setTimeout(() => {title.textContent = "Rock beats Scissors!";}, 500);
             computerScore ++;
         } else if (computerChoice.toUpperCase() == "PAPER") {
             console.log("Scissors beats Paper!");
+            setTimeout(() => {title.textContent = "Scissors beats Paper!";}, 500);
             humanScore ++;
         } else if (computerChoice.toUpperCase() == "SCISSORS") {
             console.log("Draw!");
+            setTimeout(() => {title.textContent = "Draw!";}, 500);
         }
 
     }
 }
 
-function playGame() {
-    console.log(`\nYour score: ${humanScore}`);
-    console.log(`Computer score: ${computerScore}\n\n`);
+// function playGame() {
+//     console.log(`\nYour score: ${humanScore}`);
+//     console.log(`Computer score: ${computerScore}\n\n`);
 
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
-}
+//     const humanChoice = getHumanChoice();
+//     const computerChoice = getComputerChoice();
+//     playRound(humanChoice, computerChoice);
+// }
 
-// playGame();
-// playGame();
-// playGame();
-// playGame();
-// playGame();
 
-console.log(`\nYour score: ${humanScore}`);
-console.log(`Computer score: ${computerScore}\n`);
+// console.log(`\nYour score: ${humanScore}`);
+// console.log(`Computer score: ${computerScore}\n`);
 
-if (humanScore > computerScore) {
-    console.log("You have won!");
-} else if (humanScore === computerScore) {
-    console.log("You have drawn!");
-} else {
-    console.log("You have lost!");
-}
